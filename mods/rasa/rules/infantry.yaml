@@ -570,7 +570,7 @@ SHOK:
 	ProducibleWithLevel:
 		Prerequisites: barracks.upgraded
 
-SNIPER:
+SNIPER: 
 	Inherits: ^Soldier
 	Valued:
 		Cost: 700
@@ -580,7 +580,7 @@ SNIPER:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
-		Prerequisites: ~disabled
+		Prerequisites: ~barr, ~infantry.england, ~techlevel.high
 		Description: Elite sniper infantry unit.\nCan detect cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Health:
 		HP: 80
