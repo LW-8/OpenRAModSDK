@@ -95,7 +95,7 @@ echo "TAG: ${TAG}"
 
 pushd "${BUILTDIR}" > /dev/null
 find "${SRC_DIR}/thirdparty/download/windows/" -name '*.dll' -exec cp '{}' '.' ';'
-zip "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable" -r -9 * --quiet --symlinks
+zip "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable.zip" -r -9 * --quiet --symlinks
 
 echo $(pwd)
 
