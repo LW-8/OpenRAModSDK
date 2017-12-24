@@ -86,6 +86,18 @@ fi
 popd > /dev/null
 
 echo "Packaging zip archive"
+echo $(pwd)
+
+for entry in "$(pwd)"/*
+do
+	echo "$entry"
+done
+
+echo "BUILTDIR: ${BUILTDIR}"
+echo "SRC_DIR: ${SRC_DIR}"
+echo "PACKAGING_INSTALLER_NAME: ${PACKAGING_INSTALLER_NAME}"
+echo "OUTPUTDIR: ${OUTPUTDIR}"
+
 pushd "${BUILTDIR}" > /dev/null
 find "${SRC_DIR}/thirdparty/download/windows/" -name '*.dll' -exec cp '{}' '.' ';'
 zip "${PACKAGING_INSTALLER_NAME}-${TAG}-winportable" -r -9 * --quiet --symlinks
