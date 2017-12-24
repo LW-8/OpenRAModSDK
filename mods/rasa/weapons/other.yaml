@@ -190,3 +190,21 @@ MADTankDetonate:
 		Explosions: med_explosion
 		ImpactSounds: mineblo1.aud
 		VictimScanRadius: 0
+
+Laser:
+	ReloadDelay: 40
+	Range: 7c512
+	Report: obelray1.aud
+	Projectile: LaserZap
+		Width: 85
+		HitAnim: laserfire
+		ZOffset: 2047
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 360
+		Versus:
+			Wood: 50
+		DamageTypes: Prone50Percent, TriggerProne, FireDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Vehicle, Structure, Wall, Husk, Trees, Creep

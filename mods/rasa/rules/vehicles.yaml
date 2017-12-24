@@ -4,7 +4,7 @@ V2RL:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
-		Prerequisites: dome, ~vehicles.soviet, ~techlevel.medium
+		Prerequisites: dome, ~vehicles.soviet, !~vehicles.ukraine, ~techlevel.medium
 		Description: Long-range rocket artillery.\n  Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 900
@@ -33,6 +33,16 @@ V2RL:
 		ReloadPrefix: empty-
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
+
+UKRAINEV2RL:
+	Inherits: V2RL
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Prerequisites: dome, ~vehicles.ukraine, ~techlevel.medium
+	Tooltip:
+		Name: V2 Rocket
+	Armament:
+		Weapon: SCUDX
 
 1TNK:
 	Inherits: ^Tank
@@ -215,6 +225,32 @@ V2RL:
 		Prerequisites: vehicles.upgraded
 	DetectCloaked:
 		Range: 6c0
+
+KINGTNK:
+	Inherits: 4TNK
+	Buildable:
+		BuildPaletteOrder: 300
+		BuildLimit: 1
+		Prerequisites: fix, stek, ~vehicles.belarus, ~techlevel.high
+		BuildDuration: 3500
+		Description: The king of all tanks!\n  Strong vs Vehicles, Infantry, Aircraft\n  Weak vs Nothing
+	Valued:
+		Cost: 3200
+	Tooltip:
+		Name: King Mammoth
+	Health:
+		HP: 3600
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+	Armament@PRIMARY:
+		FireDelay: 3
+	SelfHealing:
+		Step: 2
+		Delay: 1
 
 ARTY:
 	Inherits: ^Tank
@@ -569,7 +605,7 @@ TTNK:
 		BuildDuration: 1166
 		Description: Tank with mounted tesla coil.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
 	Valued:
-		Cost: 1350
+		Cost: 1200
 	Tooltip:
 		Name: Tesla Tank
 	Health:
@@ -641,6 +677,24 @@ FTRK:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
+HFTRK:
+	Inherits: FTRK
+	Buildable:
+		Prerequisites: ~vehicles.belarus, ~techlevel.low
+		Description: Heavy mobile unit with mounted Flak Cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Heavy Mobile Flak
+	Health:
+		HP: 200
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 8
+		Speed: 80
+
+
 DTRK:
 	Inherits: ^Vehicle
 	Buildable:
@@ -676,7 +730,7 @@ CTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
-		Prerequisites: atek, ~vehicles.germany, ~techlevel.high
+		Prerequisites: ~disabled
 		BuildDuration: 1166
 		Description: Chrono Tank, teleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport
 	Valued:
@@ -711,19 +765,64 @@ CTNK:
 	ProducibleWithLevel:
 		Prerequisites: vehicles.upgraded
 
+STRAHLUNGTNK:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 200
+		Prerequisites: ~vehicles.germany, ~techlevel.high
+		BuildDuration: 1366
+		BuildLimit: 3
+		Description: Strahlung Prototype\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
+	Valued:
+		Cost: 2300
+	Tooltip:
+		Name: Strahlung Prototype
+	SelectionDecorations:
+		VisualBounds: 30,30
+	Health:
+		HP: 450
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 2
+		Speed: 40
+		Crushes: wall, mine, crate, infantry
+	RevealsShroud:
+		Range: 6c0
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 4c0
+	WithChargeAnimation:
+	Armament:
+		Weapon: Laser
+		LocalOffset: 0,0,232
+		FireDelay: 220
+	AttackCharges:
+		ChargeLevel: 50
+		ChargingCondition: charging
+	AmbientSound:
+		RequiresCondition: charging
+		SoundFiles: obelpowr.aud
+		Interval: 30, 40
+	AttackFrontal:
+	ProducibleWithLevel:
+		Prerequisites: vehicles.upgraded
+
 QTNK:
 	Inherits: ^Tank
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 190
-		Prerequisites: fix, stek, ~vehicles.soviet, ~techlevel.high
+		Prerequisites: fix, stek, ~vehicles.belarus, ~techlevel.high
 		Description: Deals seismic damage to nearby vehicles\nand structures.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: MAD Tank
 	Health:
-		HP: 900
+		HP: 1200
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -748,9 +847,9 @@ STNK:
 		BuildPaletteOrder: 130
 		Prerequisites: atek, ~vehicles.england, ~techlevel.high
 		BuildDuration: 1166
-		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light armor\n  Weak vs Infantry, Tanks, Aircraft
+		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light Armor, Aircraft\n  Weak vs Infantry, Heavy Armor
 	Valued:
-		Cost: 1350
+		Cost: 1400
 	Tooltip:
 		Name: Phase Transport
 	Health:
@@ -769,9 +868,16 @@ STNK:
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: ReturnFire
-	Armament:
+	Armament@Primary:
+		Name: primary
 		Weapon: APTusk
-		LocalOffset: 192,0,176
+		LocalOffset: 85,0,171
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: APTuskAA
+		LocalOffset: 85,0,171
+		MuzzleSequence: muzzle
 	Turreted:
 		TurnSpeed: 5
 	AttackTurreted:

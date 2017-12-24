@@ -146,6 +146,27 @@ TurretGun:
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
 
+6Inch:
+	Inherits: ^Artillery
+	MinRange: 2c0
+	ReloadDelay: 200
+	Range: 14c0
+	Burst: 1
+	Report: turret1.aud
+	TargetActorCenter: true
+	Projectile: Bullet
+		Inaccuracy: 1c938
+		ContrailLength: 20
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Wood: 40
+			Light: 35
+			Heavy: 25
+			Concrete: 50
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_splash
+
 2Inch:
 	Inherits: ^Cannon
 	ReloadDelay: 60

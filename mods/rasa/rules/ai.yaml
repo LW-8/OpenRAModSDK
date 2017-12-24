@@ -287,9 +287,12 @@ Player:
 			syrd: 1%
 			pbox: 10%
 			gun: 10%
+			artyturret: 60%
 			ftur: 10%
 			tsla: 7%
+			russiatsla: 10%
 			gap: 3%
+			francegap: 10%
 			fix: 0.1%
 			dome: 10%
 			agun: 5%
@@ -302,20 +305,27 @@ Player:
 			e2: 25%
 			e3: 40%
 			e4: 15%
+			sniper: 50%
 			dog: 15%
+			chitzkoi: 50%
 			shok: 15%
 			harv: 10%
 			apc: 30%
 			jeep: 40%
 			arty: 15%
 			v2rl: 40%
+			ukrainev2rl: 60%
 			ftrk: 50%
+			hftrk: 50%
 			1tnk: 70%
 			2tnk: 25%
 			3tnk: 50%
 			4tnk: 20%
+			kingtnk: 70%
 			ttnk: 20%
-			stnk: 15%
+			stnk: 40%
+			strahlungtnk: 40%
+			qtnk: 30%
 			heli: 30%
 			hind: 30%
 			mig: 30%

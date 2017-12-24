@@ -215,9 +215,21 @@ APTusk:
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 		Versus:
-			None: 25
+			None: 20
 			Light: 75
 			Concrete: 50
+			Heavy: 85
+			Wood: 65
+
+APTuskAA:
+	Inherits: APTusk
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 255
+		CloseEnough: 298
+	Warhead@3Eff: CreateEffect
+		Explosions: med_explosion_air
+		ImpactSounds: kaboom25.aud
 
 TorpTube:
 	ReloadDelay: 100
@@ -343,3 +355,12 @@ SCUD:
 		ImpactSounds: firebl3.aud
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash
+
+SCUDX:
+	Inherits: SCUD
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 140
+			Light: 90
+			Heavy: 70
+			Concrete: 160

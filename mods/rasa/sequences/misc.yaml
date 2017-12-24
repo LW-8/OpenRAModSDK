@@ -617,3 +617,8 @@ ctflag:
 	bib: mbGAP
 		Length: *
 		UseTilesetExtension: true
+
+laserfire:
+	idle: veh-hit3
+		Length: *
+		ZOffset: 511

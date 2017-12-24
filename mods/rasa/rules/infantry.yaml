@@ -48,6 +48,23 @@ DOG:
 		VoiceSet: DogVoice
 	-TakeCover:
 
+CHITZKOI:
+	Inherits: DOG
+	Buildable:
+		Prerequisites: ~kenn, stek, ~techlevel.high
+		BuildLimit: 1
+		Description: Anti-infantry robotic attack dog.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Chitzkoi
+		GenericName: Chitzkoi
+	Health:
+		HP: 175
+	Armor:
+		Type: Heavy
+	
+
 E1:
 	Inherits: ^Soldier
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -229,7 +246,7 @@ SPY:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
-		Prerequisites: ~!infantry.england, dome, ~tent, ~techlevel.medium
+		Prerequisites: ~disabled
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\nLoses disguise when attacking.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n  Special Ability: Disguised
 	Valued:
 		Cost: 500
@@ -285,7 +302,7 @@ SPY.England:
 	GivesExperience:
 		Experience: 500
 	DisguiseTooltip:
-		Name: British Spy
+		Name: Spy
 	RenderSprites:
 		Image: spy
 
@@ -573,14 +590,14 @@ SHOK:
 SNIPER: 
 	Inherits: ^Soldier
 	Valued:
-		Cost: 700
+		Cost: 600
 	Tooltip:
 		Name: Sniper
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
-		Prerequisites: ~barr, ~infantry.england, ~techlevel.high
+		Prerequisites: ~infantry.england, ~dome
 		Description: Elite sniper infantry unit.\nCan detect cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Health:
 		HP: 80

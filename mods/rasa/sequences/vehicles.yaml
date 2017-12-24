@@ -158,7 +158,46 @@ hhusk2:
 		UseClassicFacingFudge: True
 		ZOffset: -512
 
+kingtnk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 5
+	icon: 4tnkicon
+
+kingtnk.destroyed:
+	idle: 4tnk
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+	turret: 4tnk
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+		ZOffset: -512
+
 v2rl:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	empty-idle:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	aim:
+		Start: 64
+		Facings: 8
+	empty-aim:
+		Start: 72
+		Facings: 8
+	icon: v2rlicon
+
+ukrainev2rl:
 	idle:
 		Facings: 32
 		UseClassicFacingFudge: True
@@ -269,6 +308,18 @@ ftrk:
 		Length: 2
 	icon: ftrkicon
 
+hftrk:
+	idle:
+		Facings: 32
+		UseClassicFacingFudge: True
+	turret:
+		Start: 32
+		Facings: 32
+		UseClassicFacingFudge: True
+	muzzle: gunfire2
+		Length: 2
+	icon: hftrkicon
+
 dtrk:
 	idle:
 		Facings: 32
@@ -276,12 +327,24 @@ dtrk:
 	icon: dtrkicon
 
 ctnk:
+ 	idle:
+ 		Facings: 32
+ 		UseClassicFacingFudge: True
+ 	muzzle: gunfire2
+ 		Length: 5
+ 	icon: ctnkicon
+
+strahlungtnk:
 	idle:
 		Facings: 32
 		UseClassicFacingFudge: True
+	active:
+		Start: 0
+		Facings: 32
 	muzzle: gunfire2
 		Length: 5
 	icon: ctnkicon
+
 
 qtnk:
 	idle:

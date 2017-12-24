@@ -20,17 +20,17 @@
 		Name: England
 		InternalName: england
 		Side: Allies
-		Description: England: Espionage\nSpecial Unit: British Spy\nSpecial Unit: Phase Transport
+		Description: England: Espionage & Stealth\nUnique Infantry: British Spy, Sniper\nUnique Vehicles: Phase Transport
 	Faction@2:
 		Name: France
 		InternalName: france
 		Side: Allies
-		Description: France: Deception\nSpecial Ability: Can build fake structures\nSpecial Unit: Mobile Gap Generator
+		Description: France: Deception & Defense\nSpecial Ability: Can build fake structures\nUnique Vehicle: Mobile Gap Generator\nUnique Defense Structure: Artillery Turret\nImproved Defense Structure: Gap Generator
 	Faction@3:
 		Name: Germany
 		InternalName: germany
 		Side: Allies
-		Description: Germany: Technology\nSpecial Ability: Advanced Chronoshift\nSpecial Unit: Chrono Tank
+		Description: Germany: High Technology\nSpecial Ability: Advanced Chronoshift\nUnique Vehicle: Strahlung Prototype
 	Faction@4:
 		Name: Soviet
 		InternalName: soviet
@@ -40,12 +40,17 @@
 		Name: Russia
 		InternalName: russia
 		Side: Soviet
-		Description: Russia: Tesla Weapons\nSpecial Unit: Tesla Tank\nSpecial Unit: Shock Trooper
+		Description: Russia: Tesla\nUnique Vehicle: Tesla Tank\nUnique Infantry: Shock Trooper\nImproved Defense Structure: Tesla Coil
 	Faction@6:
 		Name: Ukraine
 		InternalName: ukraine
 		Side: Soviet
-		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nSpecial Unit: Demolition Truck
+		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nUnique Vehicle: Demolition Truck\nImproved Vehicle: V2 Rocket
+	Faction@7:
+		Name: Belarus
+		InternalName: belarus
+		Side: Soviet
+		Description: Belarus: Extra Heavy\nEpic: King Mammoth\nUnique Vehicles: MAD Tank, Heavy Mobile Flak
 	Faction@random:
 		Name: Any
 		InternalName: Random
@@ -61,7 +66,7 @@
 	Faction@randomsoviet:
 		Name: Soviet
 		InternalName: RandomSoviet
-		RandomFactionMembers: russia, ukraine
+		RandomFactionMembers: russia, ukraine, belarus
 		Side: Random
 		Description: Random Soviet Country\nA random Soviet country will be chosen when the game starts.
 	ResourceType@ore:
@@ -128,7 +133,7 @@ World:
 	MPStartUnits@mcvonly:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, england, france, germany, soviet, russia, ukraine
+		Factions: allies, england, france, germany, soviet, russia, ukraine, belarus
 		BaseActor: mcv
 	MPStartUnits@lightallies:
 		Class: light
@@ -141,7 +146,7 @@ World:
 	MPStartUnits@lightsoviet:
 		Class: light
 		ClassName: Light Support
-		Factions: soviet, russia, ukraine
+		Factions: soviet, russia, ukraine, belarus
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk
 		InnerSupportRadius: 3
@@ -157,7 +162,7 @@ World:
 	MPStartUnits@heavysoviet:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviet, russia, ukraine
+		Factions: soviet, russia, ukraine, belarus
 		BaseActor: mcv
 		SupportActors: e1,e1,e1,e3,e3,apc,ftrk,3tnk,3tnk
 		InnerSupportRadius: 3

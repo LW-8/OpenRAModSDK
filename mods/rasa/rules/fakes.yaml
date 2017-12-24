@@ -325,7 +325,6 @@ MSLF:
 		BuildPaletteOrder: 990
 		Queue: Defense
 		Prerequisites: ~structures.france, ~techlevel.unrestricted
-		BuildLimit: 1
 		Description: Looks like a Missile Silo.
 		Icon: fake-icon
 	Building:

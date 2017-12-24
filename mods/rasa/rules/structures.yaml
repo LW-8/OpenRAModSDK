@@ -3,22 +3,21 @@ MSLO:
 	Inherits@IDISABLE: ^DisabledOverlay
 	Inherits@shape: ^2x1Shape
 	Valued:
-		Cost: 2500
+		Cost: 3000
 	Tooltip:
 		Name: Missile Silo
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 140
 		Prerequisites: techcenter, ~techlevel.unrestricted
-		BuildLimit: 1
-		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
+		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
 	Building:
 		Footprint: xx
 		Dimensions: 2,1
 	Health:
 		HP: 1000
 	Armor:
-		Type: Wood
+		Type: Concrete
 	RevealsShroud:
 		Range: 6c0
 		RequiresCondition: !disabled
@@ -33,7 +32,7 @@ MSLO:
 		PauseOnCondition: disabled
 		Cursor: nuke
 		Icon: abomb
-		ChargeTime: 540
+		ChargeTime: 600
 		Description: Atom Bomb
 		LongDesc: Launches a devastating atomic bomb\nat a target location.
 		BeginChargeSpeechNotification: AbombPrepping
@@ -72,7 +71,7 @@ GAP:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 110
-		Prerequisites: atek, ~structures.allies, ~techlevel.high
+		Prerequisites: atek, ~structures.allies, !~structures.france, ~techlevel.high
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
 		Bounds: 24,24
@@ -109,6 +108,16 @@ GAP:
 		Type: Rectangle
 			TopLeft: -512, -512
 			BottomRight: 512, 512
+
+FRANCEGAP:
+	Inherits: GAP
+	Tooltip:
+		Name: Gap Generator
+	Buildable:
+		Prerequisites: atek, ~structures.france, ~techlevel.high
+	CreatesShroud:
+		Range: 10c0
+
 
 SPEN:
 	Inherits: ^Building
@@ -169,7 +178,7 @@ SPEN:
 	Power:
 		Amount: -30
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
+		Factions: soviet, russia, ukraine, belarus
 		Prerequisite: ships.soviet
 	ProvidesPrerequisite@sovietvanilla:
 		Factions: soviet
@@ -180,6 +189,9 @@ SPEN:
 	ProvidesPrerequisite@ukraine:
 		Factions: ukraine
 		Prerequisite: ships.ukraine
+	ProvidesPrerequisite@belarus:
+		Factions: belarus
+		Prerequisite: ships.belarus
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: ships.soviet
@@ -192,6 +204,9 @@ SPEN:
 	ProvidesPrerequisite@ukrainianstructure:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: ships.ukraine
+	ProvidesPrerequisite@belarusstructure:
+		RequiresPrerequisites: structures.belarus
+		Prerequisite: ships.belarus
 	ProvidesPrerequisite@buildingname:
 	EditorTilesetFilter:
 		ExcludeTilesets: INTERIOR
@@ -471,7 +486,7 @@ TSLA:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 80
-		Prerequisites: weap, ~structures.soviet, ~techlevel.medium
+		Prerequisites: weap, ~structures.soviet, !~structures.russia, ~techlevel.medium
 		Description: Advanced base defense.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -509,6 +524,25 @@ TSLA:
 	DetectCloaked:
 		Range: 6c0
 	ProvidesPrerequisite@buildingname:
+
+RUSSIATSLA:
+	Inherits: TSLA
+	Tooltip:
+		Name: Tesla Coil
+	Buildable:
+		Prerequisites: weap, ~structures.russia, ~techlevel.medium
+	Health:
+		HP: 450
+	AttackTesla:
+		ReloadDelay: 90
+	RevealsShroud:
+		Range: 9c0
+	RevealsShroud@GAPGEN:
+		Range: 7c0
+	DetectCloaked:
+		Range: 7c0
+	Power:
+		Amount: -115
 
 AGUN:
 	Inherits: ^Defense
@@ -763,6 +797,28 @@ GUN:
 	BodyOrientation:
 		UseClassicFacingFudge: True
 
+ARTYTURRET:
+	Inherits: GUN
+	Buildable:
+		BuildPaletteOrder: 70
+		Prerequisites: tent, ~structures.france, ~techlevel.medium, dome
+		Description: Artillery base defense.\nCan detect cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Artillery Turret
+	Turreted:
+		TurnSpeed: 8
+		InitialFacing: 56
+	Armament:
+		Weapon: 6Inch
+		LocalOffset: 512,0,112
+		MuzzleSequence: muzzle
+	Power:
+		Amount: -55
+	DetectCloaked:
+		Range: 6c0
+
 FTUR:
 	Inherits: ^Defense
 	Inherits@AUTOTARGET: ^AutoTargetGround
@@ -966,6 +1022,9 @@ WEAP:
 	ProvidesPrerequisite@ukraine:
 		Factions: ukraine
 		Prerequisite: vehicles.ukraine
+	ProvidesPrerequisite@belarus:
+		Factions: belarus
+		Prerequisite: vehicles.belarus
 	ProvidesPrerequisite@alliedstructure:
 		RequiresPrerequisites: structures.allies
 		Prerequisite: vehicles.allies
@@ -993,6 +1052,9 @@ WEAP:
 	ProvidesPrerequisite@ukrainianstructure:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: vehicles.ukraine
+	ProvidesPrerequisite@belarusstructure:
+		RequiresPrerequisites: structures.belarus
+		Prerequisite: vehicles.belarus
 	PrimaryBuilding:
 		PrimaryCondition: primary
 	ProductionBar:
@@ -1038,7 +1100,7 @@ FACT:
 		Factions: germany
 		Prerequisite: structures.germany
 	ProvidesPrerequisite@soviet:
-		Factions: soviet, russia, ukraine
+		Factions: soviet, russia, ukraine, belarus
 		Prerequisite: structures.soviet
 	ProvidesPrerequisite@sovietvanilla:
 		Factions: soviet
@@ -1049,6 +1111,9 @@ FACT:
 	ProvidesPrerequisite@ukraine:
 		Factions: ukraine
 		Prerequisite: structures.ukraine
+	ProvidesPrerequisite@belarus:
+		Factions: belarus
+		Prerequisite: structures.belarus
 	Health:
 		HP: 1500
 	Armor:
@@ -1331,6 +1396,9 @@ AFLD:
 	ProvidesPrerequisite@ukraine:
 		Factions: ukraine
 		Prerequisite: aircraft.ukraine
+	ProvidesPrerequisite@belarus:
+		Factions: belarus
+		Prerequisite: aircraft.belarus
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: aircraft.soviet
@@ -1343,6 +1411,9 @@ AFLD:
 	ProvidesPrerequisite@ukrainianstructure:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: aircraft.ukraine
+	ProvidesPrerequisite@belarusstructure:
+		RequiresPrerequisites: structures.belarus
+		Prerequisite: aircraft.belarus
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
 		Prerequisites: aircraft.soviet
@@ -1587,6 +1658,9 @@ BARR:
 	ProvidesPrerequisite@ukraine:
 		Factions: ukraine
 		Prerequisite: infantry.ukraine
+	ProvidesPrerequisite@belarus:
+		Factions: belarus
+		Prerequisite: infantry.belarus
 	ProvidesPrerequisite@sovietstructure:
 		RequiresPrerequisites: structures.soviet
 		Prerequisite: infantry.soviet
@@ -1599,6 +1673,9 @@ BARR:
 	ProvidesPrerequisite@ukrainianstructure:
 		RequiresPrerequisites: structures.ukraine
 		Prerequisite: infantry.ukraine
+	ProvidesPrerequisite@belarusstructure:
+		RequiresPrerequisites: structures.belarus
+		Prerequisite: infantry.belarus
 	Power:
 		Amount: -20
 	ProvidesPrerequisite@buildingname:
