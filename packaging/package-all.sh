@@ -1,6 +1,13 @@
 #!/bin/bash
 set -e
 
+echo $(pwd)
+
+for entry in "$(pwd)"/*
+do
+	echo "$entry"
+done
+
 if [ $# -eq "0" ]; then
 	echo "Usage: `basename $0` version [outputdir]"
 	exit 1
