@@ -46,6 +46,18 @@ modify_plist() {
 }
 
 echo "Building launcher"
+
+echo $(pwd)
+
+for entry in "$(pwd)"/*
+do
+	echo "$entry"
+done
+
+echo "PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME: ${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
+echo "PACKAGING_OSX_LAUNCHER_SOURCE: ${PACKAGING_OSX_LAUNCHER_SOURCE}"
+echo "BUILTDIR: ${BUILTDIR}"
+
 curl -s -L  -o "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}" -O "${PACKAGING_OSX_LAUNCHER_SOURCE}" || exit 3
 
 unzip -qq -d "${BUILTDIR}" "${PACKAGING_OSX_LAUNCHER_TEMP_ARCHIVE_NAME}"
