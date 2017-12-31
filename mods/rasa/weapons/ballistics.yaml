@@ -79,6 +79,21 @@
 			Heavy: 115
 		InvalidTargets: Air
 
+160mm:
+	Inherits: ^Cannon
+	ReloadDelay: 90
+	Burst: 2
+	InvalidTargets: Air, Infantry
+	Warhead@1Dam: SpreadDamage
+		Damage: 90
+		Versus:
+			None: 30
+			Wood: 95
+			Light: 95
+			Concrete: 70
+			Heavy: 155
+		InvalidTargets: Air
+
 TurretGun:
 	Inherits: ^Cannon
 	ReloadDelay: 30
@@ -155,14 +170,14 @@ TurretGun:
 	Report: turret1.aud
 	TargetActorCenter: true
 	Projectile: Bullet
-		Inaccuracy: 1c938
+		Inaccuracy: 938
 		ContrailLength: 20
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
 			Wood: 40
-			Light: 35
-			Heavy: 25
+			Light: 65
+			Heavy: 85
 			Concrete: 50
 	Warhead@4EffWater: CreateEffect
 		Explosions: large_splash

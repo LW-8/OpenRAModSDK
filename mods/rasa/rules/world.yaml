@@ -20,12 +20,12 @@
 		Name: England
 		InternalName: england
 		Side: Allies
-		Description: England: Espionage & Stealth\nUnique Infantry: British Spy, Sniper\nUnique Vehicles: Phase Transport
+		Description: England: Espionage & Stealth\nUnique Infantry: British Spy, Sniper\nUnique Vehicle: Phase Fortress
 	Faction@2:
 		Name: France
 		InternalName: france
 		Side: Allies
-		Description: France: Deception & Defense\nSpecial Ability: Can build fake structures\nUnique Vehicle: Mobile Gap Generator\nUnique Defense Structure: Artillery Turret\nImproved Defense Structure: Gap Generator
+		Description: France: Deception & Defense\nSpecial Ability: Can build fake structures\nUnique Vehicle: Mobile Gap Generator\nUnique Defense Structures: Artillery Turret, Advanced Gap Generator
 	Faction@3:
 		Name: Germany
 		InternalName: germany
@@ -40,12 +40,12 @@
 		Name: Russia
 		InternalName: russia
 		Side: Soviet
-		Description: Russia: Tesla\nUnique Vehicle: Tesla Tank\nUnique Infantry: Shock Trooper\nImproved Defense Structure: Tesla Coil
+		Description: Russia: Tesla\nUnique Vehicle: Tesla Tank\nUnique Infantry: Shock Trooper\nUnique Defense Structure: Hyper Tesla Coil
 	Faction@6:
 		Name: Ukraine
 		InternalName: ukraine
 		Side: Soviet
-		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nUnique Vehicle: Demolition Truck\nImproved Vehicle: V2 Rocket
+		Description: Ukraine: Demolitions\nSpecial Ability: Parabombs\nUnique Vehicle: Demolition Truck, V2 Rocket H.E.
 	Faction@7:
 		Name: Belarus
 		InternalName: belarus

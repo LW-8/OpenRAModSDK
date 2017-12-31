@@ -85,6 +85,15 @@ TeslaZap:
 		Versus:
 			Wood: 60
 
+RussiaTeslaZap:
+	Inherits: ^TeslaWeapon
+	Range: 9c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 62
+		Damage: 150
+		Versus:
+			Wood: 80
+
 PortaTesla:
 	Inherits: ^TeslaWeapon
 	ReloadDelay: 70
@@ -192,13 +201,13 @@ MADTankDetonate:
 		VictimScanRadius: 0
 
 Laser:
-	ReloadDelay: 40
-	Range: 7c512
+	ReloadDelay: 140
+	Range: 11c512
 	Report: obelray1.aud
 	Projectile: LaserZap
-		Width: 85
+		Width: 200
 		HitAnim: laserfire
-		ZOffset: 2047
+		ZOffset: 1
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 360

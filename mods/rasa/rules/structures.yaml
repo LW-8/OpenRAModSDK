@@ -9,6 +9,7 @@ MSLO:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 140
+		BuildLimit: 1
 		Prerequisites: techcenter, ~techlevel.unrestricted
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
 	Building:
@@ -71,7 +72,7 @@ GAP:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 110
-		Prerequisites: atek, ~structures.allies, !~structures.france, ~techlevel.high
+		Prerequisites: ~structures.allies, dome
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
 		Bounds: 24,24
@@ -112,11 +113,18 @@ GAP:
 FRANCEGAP:
 	Inherits: GAP
 	Tooltip:
-		Name: Gap Generator
+		Name: Advanced Gap Generator
 	Buildable:
-		Prerequisites: atek, ~structures.france, ~techlevel.high
+		Prerequisites: dome, atek, ~structures.france, ~techlevel.high
+		Description: Obscures the enemy's view with wide shroud.\nRequires power to operate.
+	Valued:
+		Cost: 1000
+	Health:
+		HP: 800
 	CreatesShroud:
-		Range: 10c0
+		Range: 11c0
+	Power:
+		Amount: -75
 
 
 SPEN:
@@ -486,7 +494,7 @@ TSLA:
 	Buildable:
 		Queue: Defense
 		BuildPaletteOrder: 80
-		Prerequisites: weap, ~structures.soviet, !~structures.russia, ~techlevel.medium
+		Prerequisites: weap, ~structures.soviet, ~techlevel.medium
 		Description: Advanced base defense.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -528,13 +536,15 @@ TSLA:
 RUSSIATSLA:
 	Inherits: TSLA
 	Tooltip:
-		Name: Tesla Coil
+		Name: Hyper Tesla Coil
 	Buildable:
-		Prerequisites: weap, ~structures.russia, ~techlevel.medium
-	Health:
-		HP: 450
+		Prerequisites: weap, tsla, stek, ~structures.russia, ~techlevel.high
+	Valued:
+		Cost: 1400
+	Armament:
+		Weapon: RussiaTeslaZap
 	AttackTesla:
-		ReloadDelay: 90
+		ReloadDelay: 80
 	RevealsShroud:
 		Range: 9c0
 	RevealsShroud@GAPGEN:
@@ -542,7 +552,7 @@ RUSSIATSLA:
 	DetectCloaked:
 		Range: 7c0
 	Power:
-		Amount: -115
+		Amount: -120
 
 AGUN:
 	Inherits: ^Defense

@@ -134,6 +134,10 @@ MammothTusk:
 		ImpactSounds: kaboom25.aud
 		ValidTargets: Air
 
+KingMammothTusk:
+	Inherits: MammothTusk
+	Burst: 4
+
 Nike:
 	Inherits: ^AntiAirMissile
 	ReloadDelay: 15
@@ -218,7 +222,7 @@ APTusk:
 			None: 20
 			Light: 75
 			Concrete: 50
-			Heavy: 85
+			Heavy: 95
 			Wood: 65
 
 APTuskAA:
@@ -359,8 +363,10 @@ SCUD:
 SCUDX:
 	Inherits: SCUD
 	Warhead@1Dam: SpreadDamage
+		Damage: 80
 		Versus:
-			None: 140
-			Light: 90
-			Heavy: 70
-			Concrete: 160
+			None: 160
+			Light: 100
+			Heavy: 80
+			Wood: 160
+			Concrete: 140

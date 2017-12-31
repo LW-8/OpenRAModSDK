@@ -308,7 +308,7 @@ Player:
 			sniper: 50%
 			dog: 15%
 			chitzkoi: 50%
-			shok: 15%
+			shok: 45%
 			harv: 10%
 			apc: 30%
 			jeep: 40%
@@ -322,7 +322,7 @@ Player:
 			3tnk: 50%
 			4tnk: 20%
 			kingtnk: 70%
-			ttnk: 20%
+			ttnk: 40%
 			stnk: 40%
 			strahlungtnk: 40%
 			qtnk: 30%
