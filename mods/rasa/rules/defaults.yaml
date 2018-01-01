@@ -301,6 +301,9 @@
 		Types: Tank
 	Tooltip:
 		GenericName: Tank
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: AttackAnything
 
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
@@ -416,6 +419,9 @@
 		StandSequences: stand,stand2
 	DetectCloaked:
 		CloakTypes: Hijacker
+	AutoTarget:
+		InitialStance: ReturnFire
+		InitialStanceAI: AttackAnything
 
 ^CivInfantry:
 	Inherits: ^Infantry

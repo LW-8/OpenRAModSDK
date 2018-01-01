@@ -886,7 +886,7 @@ STNK:
 		BuildDuration: 1166
 		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light Armor, Aircraft\n  Weak vs Infantry, Heavy Armor
 	Valued:
-		Cost: 2000
+		Cost: 1100
 	Tooltip:
 		Name: Phase Fortress
 	Health:
@@ -921,13 +921,9 @@ STNK:
 	WithSpriteTurret:
 	Cargo:
 		Types: Infantry
-		MaxWeight: 1
-		PipCount: 1
+		MaxWeight: 4
+		PipCount: 4
 		LoadingCondition: notmobile
-	AttackGarrisoned:
-		PortOffsets: 0,0,0
-		PortYaws: 1
-		PortCones: 1
 	Cloak:
 		InitialDelay: 125
 		CloakDelay: 250
