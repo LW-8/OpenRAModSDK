@@ -201,7 +201,7 @@ MADTankDetonate:
 		VictimScanRadius: 0
 
 Laser:
-	ReloadDelay: 140
+	ReloadDelay: 180
 	Range: 11c512
 	Report: obelray1.aud
 	Projectile: LaserZap

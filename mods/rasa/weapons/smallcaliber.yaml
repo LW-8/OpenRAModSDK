@@ -294,3 +294,4 @@ Sniper:
 	Range: 10c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 140
+		InvalidTargets: Ship, Structure, Bridge, Vehicle, Tank, Water, Wall, Husk

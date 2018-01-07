@@ -60,7 +60,7 @@ CHITZKOI:
 		Name: Chitzkoi
 		GenericName: Chitzkoi
 	Health:
-		HP: 1400
+		HP: 750
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -599,7 +599,7 @@ SNIPER:
 		Queue: Infantry
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
-		Prerequisites: ~tent, dome, ~infantry.england, ~techlevel.medium
+		Prerequisites: tent, dome, ~infantry.england, ~techlevel.medium
 		Description: Sniper infantry unit.\nCan detect cloaked units.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Health:
 		HP: 100

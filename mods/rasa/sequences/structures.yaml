@@ -728,3 +728,45 @@ cycl:
 	damaged-idle:
 		Start: 16
 		Length: 16
+
+acommcenter:
+	idle:
+		Length: 16
+		Tick: 100
+	damaged-idle:
+		Start: 16
+		Length: 16
+		Tick: 100
+	dead:
+		Start: 32
+		Tick: 800
+	make: acommcentermake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: acommcentericnh.tem
+		AddExtension: False
+
+scommcenter:
+	idle:
+		Length: 16
+		Tick: 100
+	damaged-idle:
+		Start: 16
+		Length: 16
+		Tick: 100
+	dead:
+		Start: 32
+		Tick: 800
+	make: scommcentermake
+		Length: *
+		Tick: 80
+	bib: bib3
+		UseTilesetExtension: true
+		Length: *
+	icon: scommcentericnh.tem
+		AddExtension: False

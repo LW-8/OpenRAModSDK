@@ -39,13 +39,14 @@ UKRAINEV2RL:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Prerequisites: dome, ~vehicles.ukraine, ~techlevel.medium
+		BuildPaletteOrder: 81
 		Description: Long-range rocket artillery with a high explosive SCUD missile.\n  Strong vs Infantry, Light armor, Buildings\n  Weak vs Tanks, Aircraft
 	Tooltip:
 		Name: V2 Rocket H.E.
 	Armament:
 		Weapon: SCUDX
 	Valued:
-		Cost: 1300
+		Cost: 1200
 
 1TNK:
 	Inherits: ^Tank
@@ -717,15 +718,19 @@ HFTRK:
 	Inherits: FTRK
 	Buildable:
 		Prerequisites: ~vehicles.belarus, ~techlevel.low
-		Description: Heavy mobile unit with mounted Flak Cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
+		Description: Heavy unit with mounted Flak Cannon.\n  Strong vs Infantry, Light armor, Aircraft\n  Weak vs Tanks
 	Valued:
-		Cost: 650
+		Cost: 750
 	Tooltip:
-		Name: Heavy Mobile Flak
+		Name: Heavy Flak
 	Health:
-		HP: 200
+		HP: 250
 	Armor:
 		Type: Heavy
+	Armament@TERTIARY:
+		Weapon: M60mg
+		LocalOffset: 85,0,171
+		MuzzleSequence: muzzle
 	Mobile:
 		TurnSpeed: 8
 		Speed: 80
@@ -807,17 +812,17 @@ STRAHLUNGTNK:
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 200
-		Prerequisites: ~vehicles.germany, ~techlevel.high
+		Prerequisites: atek, ~vehicles.germany, ~techlevel.high
 		BuildDuration: 1366
-		Description: Strahlung Prototype\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft
+		Description: Strahlung Prototype\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
-		Cost: 2000
+		Cost: 1800
 	Tooltip:
 		Name: Strahlung Prototype
 	SelectionDecorations:
 		VisualBounds: 30,30
 	Health:
-		HP: 400
+		HP: 300
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -884,13 +889,13 @@ STNK:
 		BuildPaletteOrder: 130
 		Prerequisites: atek, ~vehicles.england, ~techlevel.high
 		BuildDuration: 1166
-		Description: Lightly armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light Armor, Aircraft\n  Weak vs Infantry, Heavy Armor
+		Description: Armored infantry transport\nwhich can cloak. Can detect cloaked units.\n  Strong vs Light Armor, Aircraft\n  Weak vs Infantry, Heavy Armor
 	Valued:
-		Cost: 1100
+		Cost: 1400
 	Tooltip:
 		Name: Phase Fortress
 	Health:
-		HP: 700
+		HP: 600
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -923,6 +928,7 @@ STNK:
 		Types: Infantry
 		MaxWeight: 4
 		PipCount: 4
+		InitialUnits: e1, e1, e1, e3
 		LoadingCondition: notmobile
 	Cloak:
 		InitialDelay: 125

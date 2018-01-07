@@ -1463,7 +1463,7 @@ AFLD:
 		OrderName: UkraineParabombs
 		Prerequisites: aircraft.ukraine
 		Icon: parabombs
-		ChargeTime: 300
+		ChargeTime: 240
 		Description: Parabombs
 		LongDesc: A squad of Badgers drops parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -2070,3 +2070,85 @@ ANYPOWER:
 		Name: Power Plant
 	Buildable:
 		Description: Power Plant
+
+ACOMMCENTER:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 0,512,128, 420,-598,213
+		Type: Rectangle
+			TopLeft: -1024, -384
+			BottomRight: 1024, 1024
+	Valued:
+		Cost: 3000
+	Tooltip:
+		Name: Allied Communications Center
+	Buildable:
+		BuildPaletteOrder: 400
+		BuildLimit: 1
+		Prerequisites: dome, hpad, atek, ~structures.allies, ~techlevel.high
+		Queue: Building
+		Description: Provides nuke bomber support power.\nRequires power to operate.
+	Building:
+		Footprint: X_ xx ==
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-512,0
+	Selectable:
+		Bounds: 48,40,0,9
+	SelectionDecorations:
+		VisualBounds: 48,53,0,-4
+	RequiresPower:
+	WithSpriteBody:
+		PauseAnimationWhenDisabled: true
+	Health:
+		HP: 1300
+	RevealsShroud:
+		Range: 16c0
+		RequiresCondition: !disabled
+		RevealGeneratedShroud: False
+	RevealsShroud@Offline:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroud@GAPGEN:
+		Range: 12c0
+		RequiresCondition: !disabled
+	WithBuildingBib:
+	RenderDetectionCircle:
+	DetectCloaked:
+		Range: 8c0
+	Power:
+		Amount: -200
+	ProvidesPrerequisite@buildingname:
+	AirstrikePower@nukebomber:
+		PauseOnCondition: disabled
+		OrderName: NukeBomber
+		Icon: parabombs
+		ChargeTime: 540
+		Description: Nuke Bomber
+		LongDesc: A Badger drops a parachuted nuclear payload on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		CameraActor: camera
+		CameraRemoveDelay: 150
+		UnitType: badr.nukebomber
+		QuantizedFacings: 8
+		DisplayBeacon: true
+		BeaconPoster: atomicon
+		SquadSize: 1
+		SquadOffset: 0,0,0
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CircleSequence: circles
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayRadarPing: True
+		FlashType: Nuke
+		CameraRange: 10c0
+	SupportPowerChargeBar:
+	PrimaryBuilding:
+		PrimaryCondition: primary
+
+SCOMMCENTER:
+	Inherits: ACOMMCENTER
+	Tooltip:
+		Name: Soviet Communications Center
+	Buildable:
+		Prerequisites: dome, afld, stek, ~structures.soviet, ~techlevel.high

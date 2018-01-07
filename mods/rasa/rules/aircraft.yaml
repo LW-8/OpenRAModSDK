@@ -79,6 +79,48 @@ BADR.Bomber:
 	GivesExperience:
 		Experience: 1000
 
+BADR.NukeBomber:
+	Inherits: ^NeutralPlane
+	AttackBomber:
+	Armament:
+		Weapon: NukeBomb
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Aircraft:
+		CruiseAltitude: 2560
+		TurnSpeed: 5
+		Speed: 149
+		Repulsable: False
+		MaximumPitch: 56
+	AmmoPool:
+		Ammo: 1
+	-Selectable:
+	SelectionDecorations:
+		RenderSelectionBars: False
+	-Voiced:
+	Tooltip:
+		Name: Badger
+	Contrail@1:
+		Offset: -432,560,0
+	Contrail@2:
+		Offset: -432,-560,0
+	SpawnActorOnDeath:
+		Actor: BADR.Husk
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	-EjectOnDeath:
+	RejectsOrders:
+	RenderSprites:
+		Image: badr
+	GivesExperience:
+		Experience: 1000
+
 MIG:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove

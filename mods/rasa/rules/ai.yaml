@@ -262,27 +262,30 @@ Player:
 			Mcv: mcv
 		BuildingLimits:
 			proc: 4
-			barr: 1
-			tent: 1
+			barr: 2
+			tent: 2
 			kenn: 1
 			dome: 1
-			weap: 1
+			weap: 2
 			spen: 1
 			syrd: 1
 			hpad: 4
 			afld: 4
 			atek: 1
 			stek: 1
-			fix: 1
+			fix: 2
+			acommcenter: 1
+			scommcenter: 1
 		BuildingFractions:
 			proc: 30%
 			powr: 1%
 			apwr: 20%
-			tent: 1%
-			barr: 1%
-			kenn: 0.5%
-			weap: 3%
-			hpad: 2%
+			tent: 10%
+			barr: 10%
+			kenn: 10%
+			weap: 10%
+			hpad: 5%
+			afld: 5%
 			spen: 1%
 			syrd: 1%
 			pbox: 10%
@@ -300,6 +303,8 @@ Player:
 			atek: 1%
 			stek: 1%
 			mslo: 1%
+			acommcenter: 10%
+			scommcenter: 10%
 		UnitsToBuild:
 			e1: 65%
 			e2: 25%
@@ -311,20 +316,20 @@ Player:
 			shok: 45%
 			harv: 10%
 			apc: 30%
-			jeep: 40%
+			jeep: 30%
 			arty: 15%
-			v2rl: 40%
+			v2rl: 30%
 			ukrainev2rl: 60%
-			ftrk: 50%
+			ftrk: 30%
 			hftrk: 50%
-			1tnk: 70%
+			1tnk: 20%
 			2tnk: 25%
-			3tnk: 50%
-			4tnk: 20%
+			3tnk: 30%
+			4tnk: 30%
 			kingtnk: 70%
-			ttnk: 40%
-			stnk: 40%
-			strahlungtnk: 40%
+			ttnk: 50%
+			stnk: 60%
+			strahlungtnk: 50%
 			qtnk: 30%
 			heli: 30%
 			hind: 30%
@@ -338,7 +343,7 @@ Player:
 		UnitLimits:
 			dog: 4
 			harv: 8
-		SquadSize: 10
+		SquadSize: 16
 		SupportPowerDecision@spyplane:
 			OrderName: SovietSpyPlane
 			MinimumAttractiveness: 1
@@ -387,6 +392,15 @@ Player:
 				Attractiveness: -10
 				TargetMetric: Value
 				CheckRadius: 7c0
+		SupportPowerDecision@nukebomber:
+			OrderName: NukeBomber
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
 	HackyAI@NavalAI:
 		Name: Naval AI
 		Type: naval
