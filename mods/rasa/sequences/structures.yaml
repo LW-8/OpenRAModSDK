@@ -730,43 +730,36 @@ cycl:
 		Length: 16
 
 acommcenter:
+	scommcenter:
 	idle:
-		Length: 16
-		Tick: 100
+		Offset: 0,-4
 	damaged-idle:
-		Start: 16
-		Length: 16
-		Tick: 100
-	dead:
-		Start: 32
-		Tick: 800
+		Start: 1
+		Offset: 0,-4
 	make: acommcentermake
 		Length: *
-		Tick: 80
+		Offset: 0,-4
 	bib: bib3
-		UseTilesetExtension: true
 		Length: *
+		UseTilesetExtension: true
 		TilesetOverrides:
 			INTERIOR: TEMPERAT
-	icon: acommcentericnh.tem
-		AddExtension: False
+	icon: domeicon
+	fake-icon: domficon
 
 scommcenter:
 	idle:
-		Length: 16
-		Tick: 100
+		Offset: 0,-4
 	damaged-idle:
-		Start: 16
-		Length: 16
-		Tick: 100
-	dead:
-		Start: 32
-		Tick: 800
+		Start: 1
+		Offset: 0,-4
 	make: scommcentermake
 		Length: *
-		Tick: 80
+		Offset: 0,-4
 	bib: bib3
-		UseTilesetExtension: true
 		Length: *
-	icon: scommcentericnh.tem
-		AddExtension: False
+		UseTilesetExtension: true
+		TilesetOverrides:
+			INTERIOR: TEMPERAT
+	icon: domeicon
+	fake-icon: domficon
